@@ -3,18 +3,15 @@ import "./Services.css";
 import useFetch from "../../Hook/useFetch";
 
 const Services = () => {
- const API_BASE_URL =
-  window.location.hostname === "localhost"
-    ? "http://localhost:5000"
-    : "https://vercel-backend-sigma-hazel.vercel.app";
+  const API_BASE_URL = window.location.hostname === "localhost"
+      ? "http://localhost:5000"
+      : "https://vercel-backend-sigma-hazel.vercel.app";
 
-const { data, load, error } = useFetch(
-  `${API_BASE_URL}/products`
-);
+  const { data, load, error } = useFetch( `${API_BASE_URL}/products?limit=6`);
 
 
   console.log(data);
-   
+
 
   if (load) return <p>Loading services...</p>;
   if (error) return <p>{error}</p>;
