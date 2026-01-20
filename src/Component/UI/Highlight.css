@@ -1,0 +1,46 @@
+
+
+.highlight-section {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Blue background section */
+.highlight-bg {
+  background-color: #0f172a;; /* professional blue */
+  color: #ffffff;
+
+  padding: 90px 20px;
+  text-align: center;
+}
+
+/* Heading */
+.highlight-bg h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Text */
+.highlight-bg p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e0e7ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .highlight-bg {
+    padding: 70px 20px;
+  }
+
+  .highlight-bg h2 {
+    font-size: 26px;
+  }
+
+  .highlight-bg p {
+    font-size: 15px;
+  }
+}
