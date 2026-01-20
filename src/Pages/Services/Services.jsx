@@ -4,8 +4,9 @@ import useFetch from "../../Hook/useFetch";
 
 const Services = () => {
   const { data, load, error } = useFetch(
-    "http://localhost:5000/products"
-  );
+  "https://vercel-backend-sigma-hazel.vercel.app/products"
+);
+
 
   console.log(data);
    
