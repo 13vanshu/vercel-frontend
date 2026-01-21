@@ -1,48 +1,33 @@
 import React from "react";
 import "./Team.css";
+import useFetch from "../../Hook/useFetch";
 
 const Team = () => {
+
+  const API_BASE_URL = window.location.hostname === "localhost"
+  ? "http://localhost:5000"
+  : "https://vercel-backend-sigma-hazel.vercel.app"
+
+  const { data, load, error } = useFetch(`${API_BASE_URL}/api/team`);
+
+  if (load) return <p>Loading team...</p>;
+  if (error) return <p>{error}</p>;
+
   return (
     <main className="team">
       <section className="team-box">
-        <h1>Our Team</h1>
-
-        <p className="team-intro">
-          Our team consists of skilled professionals with experience across
-          technology, design, and business operations. We work collaboratively
-          to deliver reliable and high-quality solutions.
-        </p>
+        <h1>{data.title}</h1>
+        <p className="team-intro">{data.intro}</p>
 
         <div className="team-grid">
-          <div className="team-member">
-            <div className="avatar">A</div>
-            <h2>Alex Kumar</h2>
-            <p className="role">Project Manager</p>
-            <p className="desc">
-              Responsible for planning, coordination, and timely delivery of
-              projects while ensuring quality standards.
-            </p>
-          </div>
-
-          <div className="team-member">
-            <div className="avatar">B</div>
-            <h2>Bhavna Sharma</h2>
-            <p className="role">Frontend Developer</p>
-            <p className="desc">
-              Focuses on building responsive user interfaces and maintaining
-              consistency across web applications.
-            </p>
-          </div>
-
-          <div className="team-member">
-            <div className="avatar">C</div>
-            <h2>Chirag Verma</h2>
-            <p className="role">Backend Developer</p>
-            <p className="desc">
-              Handles server-side logic, APIs, and system performance to ensure
-              stability and scalability.
-            </p>
-          </div>
+          {data?.teamdata?.map((item) => (
+            <div className="team-member" key={item.id}>
+              <div className="avatar">{item.avatar}</div>
+              <h2>{item.name}</h2>
+              <p className="role">{item.role}</p>
+              <p className="desc">{item.description}</p>
+            </div>
+          ))}
         </div>
       </section>
     </main>

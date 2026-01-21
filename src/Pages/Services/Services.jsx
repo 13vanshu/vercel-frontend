@@ -7,7 +7,7 @@ const Services = () => {
       ? "http://localhost:5000"
       : "https://vercel-backend-sigma-hazel.vercel.app";
 
-  const { data, load, error } = useFetch( `${API_BASE_URL}/api/products?limit=12`);
+  const { data, load, error } = useFetch( `${API_BASE_URL}/api/products?limit=6`);
 
   console.log(data);
 
@@ -18,9 +18,9 @@ const Services = () => {
   return (
     <main className="services">
       <section className="services-box">
-        <h1>Our Services</h1>
+        <h1>{data.title}</h1>
         <p className="services-intro">
-          Below are representative services displayed using live public API data.
+          {data.intro}
         </p>
 
         <div className="services-grid">
@@ -32,7 +32,7 @@ const Services = () => {
 
               <div className="service-meta">
                 <span>{item.category}</span>
-                <span>Professional</span>
+                <span>{item.rating.rate}</span>
               </div>
             </div>
           ))}
