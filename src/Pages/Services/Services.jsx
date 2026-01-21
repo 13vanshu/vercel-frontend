@@ -7,8 +7,7 @@ const Services = () => {
       ? "http://localhost:5000"
       : "https://vercel-backend-sigma-hazel.vercel.app";
 
-  const { data, load, error } = useFetch( `${API_BASE_URL}/products?limit=6`);
-
+  const { data, load, error } = useFetch( `${API_BASE_URL}/api/products?limit=12`);
 
   console.log(data);
 
