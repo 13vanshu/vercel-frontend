@@ -5,6 +5,7 @@ import Services from "../Services/Services";
 import Team from "../Team/Team";
 import Contact from "../Contact/Contact";
 import Highlight from "../../Component/UI/Highlight";
+import Jobs from "../Jobs/Jobs";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <Services />
       <Team />
       <Contact />
+      <Jobs />
     </main>
   );
 };

@@ -1,17 +1,19 @@
 import React from "react";
 import "./Team.css";
 import useFetch from "../../Hook/useFetch";
+import Loader from "../../Tools/Loader/Loader";
 
 const Team = () => {
 
   const API_BASE_URL = window.location.hostname === "localhost"
-  ? "http://localhost:5000"
-  : "https://vercel-backend-sigma-hazel.vercel.app"
+    ? "http://localhost:5000"
+    : "https://vercel-backend-sigma-hazel.vercel.app"
 
   const { data, load, error } = useFetch(`${API_BASE_URL}/api/team`);
 
-  if (load) return <p>Loading team...</p>;
-  if (error) return <p>{error}</p>;
+  if (load || !data) {
+    return <Loader />;
+  }
 
   return (
     <main className="team">

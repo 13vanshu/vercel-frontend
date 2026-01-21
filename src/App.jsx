@@ -7,6 +7,7 @@ import About from './Pages/About/About'
 import Services from './Pages/Services/Services'
 import Team from './Pages/Team/Team'
 import Contact from './Pages/Contact/Contact'
+import Jobs from './Pages/Jobs/Jobs'
 
 function App() {
   
@@ -34,6 +35,10 @@ function App() {
         {
           path:"/Contact",
           element:<Contact />,
+        },
+        {
+          path:"/Jobs",
+          element:<Jobs />,
         },
       ]
     }

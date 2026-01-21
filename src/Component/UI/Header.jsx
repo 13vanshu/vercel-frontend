@@ -32,6 +32,9 @@ const Header = () => {
         <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
           Contact
         </NavLink>
+        <NavLink to="/jobs" onClick={() => setMenuOpen(false)}>
+          Jobs
+        </NavLink>
       </nav>
     </header>
   );

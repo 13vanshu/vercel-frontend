@@ -1,0 +1,27 @@
+.loader-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+}
+
+.loader-icon {
+  font-size: 48px;
+  color: #2563eb;
+  animation: spin 1s linear infinite;
+}
+
+.loader-text {
+  font-size: 14px;
+  color: #6b7280;
+  letter-spacing: 0.5px;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
